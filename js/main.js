@@ -122,8 +122,10 @@ $(".clickBtn").on("click", function(event){
 	        window.location.hash = target;
 	    });
 	});
+	
+	// fixed scrolling navbar
 
-$('.nav').affix({offset: {top: 150} });
+$('.navbar-inverse').affix({offset: {top: 150} });
 	
 	
 
