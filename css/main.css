@@ -5,16 +5,57 @@
 #map-container { height: 300px; }
 
 
+#about {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
 
 
 
 
+.weather-style{
+  margin-top: 1em;
+}
+.card-block{
+  margin: 1em 0 1em 0;
+}
 
 
+.carousel-inner img{
+       width: 100%;
+       
+     }
 
+.carousel-caption {
+  margin: 0 auto;
+  padding-top: 1em;
+  height: auto;
+  width: 15%;
+  background:rgba(0, 0,0,0.5); 
+  border-radius: 5px;
+  
+}
+.carousel-caption  h3{
+  font-size: 150%;
+  margin: 0.3em;
+  padding: 0;
+}
 
+.carousel-caption  p{
+  font-size: 100%;
+  
+}
+dl{
+  
+  margin: 0;
+  padding: 0;
 
+  
 
-
-
-
+  
+}
+.list-group-item {
+  height: 5em;
+ }

@@ -9,10 +9,7 @@
 
 $( document ).ready(function() {
 
-// TODO: Inside of your on ready handler, invoke the Leaflet.js library
-// to draw a map in your `#map-container` div.
-  
-// var mymap = L.map('map-container').setView([28.7612, 83.7119], 13);
+//map layers
   
 var satAnnapurna = L.tileLayer('https://api.mapbox.com/styles/v1/dovde/ciylqiodi001f2rlrx8mmdqvg/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZG92ZGUiLCJhIjoiY2l5a29jaTBzMDAyODJxdDh1cXUwZHVndSJ9.z6wsWHnftHnrqsH6Bjhxbg', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -27,25 +24,66 @@ var satAnnapurna = L.tileLayer('https://api.mapbox.com/styles/v1/dovde/ciylqiodi
     id: 'your.mapbox.project.id',
     accessToken: 'pk.eyJ1IjoiZG92ZGUiLCJhIjoiY2l5a29jaTBzMDAyODJxdDh1cXUwZHVndSJ9.z6wsWHnftHnrqsH6Bjhxbg'
 });
-  
-  var baseMaps = {
+ 
+ var whiteAnnapurna =  L.tileLayer('https://api.mapbox.com/styles/v1/dovde/ciyrkqc9f001t2so761ogf7bo/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZG92ZGUiLCJhIjoiY2l5a29jaTBzMDAyODJxdDh1cXUwZHVndSJ9.z6wsWHnftHnrqsH6Bjhxbg', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    id: 'your.mapbox.project.id',
+    accessToken: 'pk.eyJ1IjoiZG92ZGUiLCJhIjoiY2l5a29jaTBzMDAyODJxdDh1cXUwZHVndSJ9.z6wsWHnftHnrqsH6Bjhxbg'
+});	
+	
+	// here I make the layers an object to put into the map
+	
+  var mtMaps = {
+	"White Map" :	whiteAnnapurna,
 	"Satellite": satAnnapurna,
 	"Topographic": topAnnapurna
 };
   
   var myMap = L.map('map-container', {
-	center: [28.7612, 83.7119],
-	zoom: 12,
+	center: [28.794671, 83.937368],
+	zoom: 8,
   layers: [satAnnapurna, ]
 
 });
+	
+	// marker inputs
+	L.marker([28.79353, 83.938]).addTo(myMap)
+    .bindPopup(' Thorung La pass');
 
-L.control.layers(baseMaps).addTo(myMap);
+	
+	L.marker([28.61543, 84.14748]).addTo(myMap)
+    .bindPopup('Lower Pisang');
+
+	
+	L.marker([28.5334, 84.1992]).addTo(myMap)
+    .bindPopup('Chame');
+
+	
+		L.marker([28.2844, 84.3729]).addTo(myMap)
+    .bindPopup('Khudi');
+		
+		
+		L.marker([28.1830, 84.1554]).addTo(myMap)
+    .bindPopup('Dharapani');
+		
+		
+		L.marker([28.7763, 83.6861]).addTo(myMap)
+    .bindPopup('Marpha');
+		
+		L.marker([28.5, 83.633333]).addTo(myMap)
+    .bindPopup('Tatopani');
+		
+	L.marker([28.6220, 83.6049]).addTo(myMap)
+    .bindPopup('Lete');
+	
+	// this  puts the map layers into the html container
+		
+L.control.layers(mtMaps).addTo(myMap);
   
-//   $('.carousel').carousel('pause');
-// TODO: Add 2 layers to your map you have visuals. Use the Open Street Maps
-// tiles served through the MapQuest CDN. Consult this example to set up
-// the map tiles layers:
+
+	// here I am making the navbar work by showing the correct content and jumping to it when 
+	// it is clicked
   
 $(".clickBtn").on("click", function(event){
   event.stopPropagation();
@@ -61,9 +99,12 @@ $(".clickBtn").on("click", function(event){
     } else if($(eventTrigger).is(".history-btn")){
        $('#history-tab').tab('show');
       
-    }else{
+    }else if($(eventTrigger).is(".stats-tab")){
       $('#stats-tab').tab('show');
-    }
+    }else {
+			$('#annapurna-weather-tab').tab('show');
+
+		}
     
 });
 
