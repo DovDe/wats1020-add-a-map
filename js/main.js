@@ -108,9 +108,26 @@ $(".clickBtn").on("click", function(event){
     
 });
 
+	// smooth scrolling function
 
-  
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
 
+	    var target = this.hash;
+	    var $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 1000, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
+	
+	// fixed scrolling navbar
+
+$('.navbar-inverse').affix({offset: {top: 150} });
+	
+	
 
 // TODO: Customize that Map to show markers with popups at no fewer than 3
 // interesting locations. (You'll need to figure out the latitude/longitude for
