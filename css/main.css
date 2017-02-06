@@ -1,7 +1,37 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.navbar-header {
+  margin-top: 0;
+  padding-top: 0;
+}
 
+.affix {
+    top: 0;
+    width: 100%;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    background-color: black;
+    border-color: black;
+}
+
+.affix a {
+    color: black !important;
+    padding: 15px !important;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.affix-top a {
+    padding: 25px !important;
+}
+
+body {
+  
+  margin-top: 0;
+  padding-top: 0;
+  
+}
 #map-container { height: 300px; }
 
 
@@ -47,15 +77,23 @@
   font-size: 100%;
   
 }
-dl{
-  
+dl{ 
   margin: 0;
-  padding: 0;
-
-  
-
-  
+  padding: 0;  
 }
 .list-group-item {
   height: 5em;
  }
+.navbar, .navbar-collapse{
+  background-color: black;
+}
+nav {
+  background-color: black;
+}
+.navbar-inverse{
+  background-color: black;
+  border-color: black;
+}
+li .active {
+  background-color: black;
+}
