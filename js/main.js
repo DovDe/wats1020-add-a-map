@@ -86,7 +86,6 @@ L.control.layers(mtMaps).addTo(myMap);
 	// it is clicked
   
 $(".clickBtn").on("click", function(event){
-  event.stopPropagation();
 
   
   var eventTrigger = $(event.target);
@@ -110,6 +109,7 @@ $(".clickBtn").on("click", function(event){
 
 	// smooth scrolling function
 
+	
 	$('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();
 
